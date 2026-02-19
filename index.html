@@ -564,8 +564,8 @@
   <!-- Load VanillaTilt for 3D Card Hover Effects -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"></script>
   <script>
-    // Automatically apply 3D Tilt to Skills, Projects, Education cards, and the Scroll Top Button
-    const tiltCards = document.querySelectorAll('#skills .grid > div, #projects .grid > div, #education .bg-white\\/5, #services .grid > div, #stats > div, #scrollTopBtn');
+    // Automatically apply 3D Tilt to Skills, Projects, Education, Services, and Stats cards
+    const tiltCards = document.querySelectorAll('#skills .grid > div, #projects .grid > div, #education .bg-white\\/5, #services .grid > div, #stats > div');
     
     VanillaTilt.init(tiltCards, {
       max: 6,               // Maximum tilt rotation (degrees)
