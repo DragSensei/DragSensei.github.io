@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth scroll-pt-24">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yousef Tamer | Software Engineer</title>
+  
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Load Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <!-- Custom Styles -->
+  <style>
+    /* Liquid Blobs Animation */
+    @keyframes blob {
+      0% { transform: translate(0px, 0px) scale(1); }
+      33% { transform: translate(30px, -50px) scale(1.1); }
+      66% { transform: translate(-20px, 20px) scale(0.9); }
+      100% { transform: translate(0px, 0px) scale(1); }
+    }
+    .animate-blob {
+      animation: blob 10s infinite alternate;
+    }
+    .animation-delay-2000 {
+      animation-delay: 2s;
+    }
+    .animation-delay-4000 {
+      animation-delay: 4s;
+    }
+
+    /* Scroll Reveal Animation Classes */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<!-- Removed overflow-x-hidden to restore native smooth scrolling functionality across all browsers -->
+<body id="top" class="min-h-screen bg-slate-950 text-slate-100 font-sans relative selection:bg-blue-500/30">
+
+  <!-- --- FLOATING NAVIGATION --- -->
+  <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center py-6 px-4 pointer-events-none reveal-on-scroll is-visible">
+    <div class="pointer-events-auto flex items-center gap-4 md:gap-8 px-6 md:px-8 py-3.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-2xl shadow-[0_8px_32px_0_rgba(0,0,0,0.4)] transition-all">
+      <a href="#skills" class="text-xs md:text-sm font-semibold tracking-wide text-slate-300 hover:text-white transition-colors">Skills</a>
+      <a href="#experience" class="text-xs md:text-sm font-semibold tracking-wide text-slate-300 hover:text-white transition-colors">Experience</a>
+      <a href="#projects" class="text-xs md:text-sm font-semibold tracking-wide text-slate-300 hover:text-white transition-colors">Projects</a>
+      <a href="#education" class="text-xs md:text-sm font-semibold tracking-wide text-slate-300 hover:text-white transition-colors">Education</a>
+    </div>
+  </nav>
+
+  <!-- --- BACKGROUND LIQUID ANIMATIONS --- -->
+  <div class="fixed inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-600/40 rounded-full mix-blend-screen filter blur-[100px] opacity-70 animate-blob"></div>
+    <div class="absolute top-[20%] right-[-10%] w-[30rem] h-[30rem] bg-indigo-500/30 rounded-full mix-blend-screen filter blur-[120px] opacity-60 animate-blob animation-delay-2000"></div>
+    <div class="absolute bottom-[-20%] left-[20%] w-[40rem] h-[40rem] bg-purple-600/30 rounded-full mix-blend-screen filter blur-[120px] opacity-60 animate-blob animation-delay-4000"></div>
+  </div>
+
+  <!-- --- MAIN CONTENT CONTAINER --- -->
+  <div class="relative z-10 max-w-5xl mx-auto px-6 pt-32 pb-12 space-y-24 md:space-y-32">
+    
+    <!-- HERO SECTION -->
+    <section class="reveal-on-scroll">
+      <div class="flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-12">
+        
+        <!-- Text Content -->
+        <div class="space-y-6 flex-1">
+          <div class="inline-block px-4 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 backdrop-blur-md text-sm font-medium tracking-wide text-emerald-300 mb-4 shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+            <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse"></span>
+            Available for Opportunities
+          </div>
+          <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight bg-clip-text text-transparent bg-gradient-to-br from-white to-white/60">
+            Yousef Tamer
+          </h1>
+          <h2 class="text-2xl md:text-3xl font-medium text-blue-400">
+            Software Engineer <span class="text-white/40">|</span> AI & Web
+          </h2>
+          <p class="text-lg text-slate-300 max-w-2xl leading-relaxed">
+            Software Engineer skilled in Python, Java, and SQL. Experience includes building high-efficiency desktop applications and responsive web interfaces, with a focus on automation, machine learning, and secure access controls.
+          </p>
+
+          <!-- Contact Actions (Glass Buttons) -->
+          <div class="flex flex-wrap items-center gap-4 pt-4">
+            
+            <!-- Download CV (Primary Highlight) -->
+            <a href="Yousef_Tamer_CV.pdf" download="Yousef_Tamer_CV.pdf" class="flex items-center gap-2 px-6 py-3 rounded-2xl bg-blue-600/80 hover:bg-blue-500 border border-blue-400/50 backdrop-blur-xl transition-all shadow-[0_8px_32px_0_rgba(37,99,235,0.4)] hover:shadow-[0_8px_32px_0_rgba(37,99,235,0.6)] hover:scale-105 active:scale-95 text-white font-medium group">
+              <i data-lucide="download" class="w-5 h-5 group-hover:-translate-y-1 transition-transform"></i>
+              Download CV
+            </a>
+
+            <!-- Enhanced Email Me -->
+            <button onclick="handleEmailClick(event)" class="flex items-center gap-2 px-6 py-3 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-xl transition-all shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] hover:scale-105 active:scale-95 text-white font-medium group cursor-pointer">
+              <i data-lucide="mail" class="w-5 h-5 group-hover:scale-110 transition-transform email-icon"></i>
+              <span class="email-text">Email Me</span>
+            </button>
+
+            <!-- GitHub -->
+            <a href="https://github.com/DragSensei/" target="_blank" rel="noreferrer" class="flex items-center gap-2 px-6 py-3 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/20 backdrop-blur-xl transition-all shadow-[0_8px_32px_0_rgba(0,0,0,0.36)] hover:scale-105 active:scale-95 text-white font-medium group">
+              <i data-lucide="github" class="w-5 h-5 group-hover:rotate-12 transition-transform"></i>
+              GitHub
+            </a>
+
+            <!-- Phone Number Tag -->
+            <div class="flex items-center gap-2 px-6 py-3 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-xl text-slate-300">
+              <i data-lucide="phone" class="w-5 h-5 opacity-70"></i>
+              01097352806
+            </div>
+          </div>
+        </div>
+
+        <!-- Profile Avatar -->
+        <div class="relative group">
+          <div class="absolute inset-0 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full blur-[40px] opacity-40 group-hover:opacity-60 transition-opacity duration-500"></div>
+          <div class="w-32 h-32 md:w-48 md:h-48 rounded-full bg-gradient-to-br from-white/10 to-white/5 border-2 border-white/20 backdrop-blur-2xl flex items-center justify-center shrink-0 overflow-hidden shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] relative z-10 transition-transform duration-500 group-hover:scale-105">
+            <img src="profile.jpg" alt="Yousef Tamer" class="w-full h-full object-cover" />
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="space-y-8 reveal-on-scroll scroll-mt-24">
+      <div class="flex items-center gap-3">
+        <div class="p-2 bg-blue-500/20 rounded-xl border border-blue-500/30">
+          <i data-lucide="cpu" class="w-6 h-6 text-blue-400"></i>
+        </div>
+        <h3 class="text-3xl font-bold">Technical Stack</h3>
+      </div>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <!-- Skill Card 1 -->
+        <div class="bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-xl rounded-3xl p-6 transition-all duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] hover:-translate-y-1 group">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-3 bg-white/10 rounded-xl border border-white/5 group-hover:scale-110 transition-transform">
+              <i data-lucide="code" class="w-5 h-5 text-indigo-300"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-white">Programming Languages</h4>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">Python</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">C/C++</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">Java</span>
+          </div>
+        </div>
+
+        <!-- Skill Card 2 -->
+        <div class="bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-xl rounded-3xl p-6 transition-all duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] hover:-translate-y-1 group">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-3 bg-white/10 rounded-xl border border-white/5 group-hover:scale-110 transition-transform">
+              <i data-lucide="brain-circuit" class="w-5 h-5 text-purple-300"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-white">Artificial Intelligence</h4>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">PyTorch</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">TensorFlow</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">Keras</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">NumPy</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">Pandas</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">Matplotlib</span>
+          </div>
+        </div>
+
+        <!-- Skill Card 3 -->
+        <div class="bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-xl rounded-3xl p-6 transition-all duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] hover:-translate-y-1 group">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-3 bg-white/10 rounded-xl border border-white/5 group-hover:scale-110 transition-transform">
+              <i data-lucide="layers" class="w-5 h-5 text-blue-300"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-white">Frontend Development</h4>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">HTML</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">CSS</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">JavaScript</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">React.js</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">JavaFX</span>
+          </div>
+        </div>
+
+        <!-- Skill Card 4 -->
+        <div class="bg-white/5 hover:bg-white/10 border border-white/10 backdrop-blur-xl rounded-3xl p-6 transition-all duration-300 shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] hover:-translate-y-1 group">
+          <div class="flex items-center gap-3 mb-6">
+            <div class="p-3 bg-white/10 rounded-xl border border-white/5 group-hover:scale-110 transition-transform">
+              <i data-lucide="database" class="w-5 h-5 text-emerald-300"></i>
+            </div>
+            <h4 class="text-xl font-semibold text-white">Backend & Database</h4>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">Flask</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">SQLite</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">SQL</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">Node.js</span>
+            <span class="px-3 py-1.5 bg-white/5 border border-white/10 rounded-lg text-sm font-medium text-slate-200 hover:bg-white/10 hover:border-white/20 transition-colors cursor-default">Spring Boot</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EXPERIENCE SECTION -->
+    <section id="experience" class="space-y-8 reveal-on-scroll scroll-mt-24">
+      <div class="flex items-center gap-3">
+        <div class="p-2 bg-purple-500/20 rounded-xl border border-purple-500/30">
+          <i data-lucide="briefcase" class="w-6 h-6 text-purple-400"></i>
+        </div>
+        <h3 class="text-3xl font-bold">Experience</h3>
+      </div>
+      
+      <div class="space-y-6 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/20 before:to-transparent">
+        
+        <!-- Experience Item 1 -->
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active reveal-on-scroll">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-900 bg-blue-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform duration-300 group-hover:scale-125"></div>
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] hover:bg-white/10 hover:-translate-y-1 transition-all duration-300">
+            <div class="flex flex-col space-y-2 mb-4">
+              <h4 class="text-xl font-bold text-white">Frontend Developer</h4>
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <span class="text-blue-300 font-medium">Digital Egypt Pioneers (DEPI)</span>
+                <span class="text-sm px-3 py-1 bg-white/10 rounded-full w-fit border border-white/5 text-slate-300">Nov 2025 – Present</span>
+              </div>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Selected for the Ministry of Communications (MCIT) elite specialized training track. Developed responsive Single Page Applications (SPAs) using React.js, optimizing rendering performance via modern Hooks and reusable component architectures.
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience Item 2 -->
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active reveal-on-scroll">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-900 bg-purple-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform duration-300 group-hover:scale-125"></div>
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] hover:bg-white/10 hover:-translate-y-1 transition-all duration-300">
+            <div class="flex flex-col space-y-2 mb-4">
+              <h4 class="text-xl font-bold text-white">Machine Learning Intern</h4>
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <span class="text-blue-300 font-medium">eFinance</span>
+                <span class="text-sm px-3 py-1 bg-white/10 rounded-full w-fit border border-white/5 text-slate-300">Aug 2025 – Sep 2025</span>
+              </div>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Engineered predictive models for financial data analysis, coordinating with database and infrastructure teams to ensure scalable deployment. Gained hands-on experience in large-scale technical operations and optimizing data pipelines for enterprise environments.
+            </p>
+          </div>
+        </div>
+
+        <!-- Experience Item 3 -->
+        <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active reveal-on-scroll">
+          <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-slate-900 bg-emerald-500 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform duration-300 group-hover:scale-125"></div>
+          <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-3xl bg-white/5 border border-white/10 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] hover:bg-white/10 hover:-translate-y-1 transition-all duration-300">
+            <div class="flex flex-col space-y-2 mb-4">
+              <h4 class="text-xl font-bold text-white">ML Trainee</h4>
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+                <span class="text-blue-300 font-medium">National Telecommunication Institute (NTI)</span>
+                <span class="text-sm px-3 py-1 bg-white/10 rounded-full w-fit border border-white/5 text-slate-300">Sep 2025 – Oct 2025</span>
+              </div>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed">
+              Completed an intensive 120-hour Deep Learning bootcamp focused on Computer Vision. Built and trained neural network models (CNNs) for image processing tasks using PyTorch and modern data augmentation techniques.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects" class="space-y-8 reveal-on-scroll scroll-mt-24">
+      <div class="flex items-center gap-3">
+        <div class="p-2 bg-indigo-500/20 rounded-xl border border-indigo-500/30">
+          <i data-lucide="terminal" class="w-6 h-6 text-indigo-400"></i>
+        </div>
+        <h3 class="text-3xl font-bold">Featured Projects</h3>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Project Card 1 -->
+        <div class="flex flex-col h-full bg-white/5 border border-white/10 backdrop-blur-2xl rounded-3xl p-6 md:p-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 group">
+          <div class="flex-1 space-y-4">
+            <h4 class="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors">Restaurant Management System (POS)</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-300 bg-blue-500/10 border border-blue-500/20 rounded-md">Python</span>
+              <span class="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-300 bg-blue-500/10 border border-blue-500/20 rounded-md">Tkinter</span>
+              <span class="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-300 bg-blue-500/10 border border-blue-500/20 rounded-md">SQLite</span>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed mt-4">
+              Developed a comprehensive POS system that improved efficiency by 30% by automating inventory management, sales tracking, and role-based access control. Enhanced user accessibility by implementing bilingual (EN/AR) support and streamlined reporting by enabling export to PDF/CSV formats.
+            </p>
+          </div>
+          <div class="pt-8 mt-auto">
+            <a href="https://github.com/DragSensei/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-blue-600/20 hover:border-blue-500/50 border border-white/10 transition-all text-sm font-medium text-white group-hover:border-white/30">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              View Source Code
+              <i data-lucide="external-link" class="w-3 h-3 ml-1 opacity-50"></i>
+            </a>
+          </div>
+        </div>
+        
+        <!-- Project Card 2 -->
+        <div class="flex flex-col h-full bg-white/5 border border-white/10 backdrop-blur-2xl rounded-3xl p-6 md:p-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] hover:bg-white/10 transition-all duration-300 hover:-translate-y-2 group">
+          <div class="flex-1 space-y-4">
+            <h4 class="text-2xl font-bold text-white group-hover:text-blue-300 transition-colors">Watch-It Media Player</h4>
+            <div class="flex flex-wrap gap-2">
+              <span class="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-300 bg-blue-500/10 border border-blue-500/20 rounded-md">Java</span>
+              <span class="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-300 bg-blue-500/10 border border-blue-500/20 rounded-md">JavaFX</span>
+              <span class="px-2.5 py-1 text-xs font-semibold uppercase tracking-wider text-blue-300 bg-blue-500/10 border border-blue-500/20 rounded-md">Maven</span>
+            </div>
+            <p class="text-slate-400 text-sm leading-relaxed mt-4">
+              Engineered a desktop media player supporting streaming/browsing for 1000+ items, resulting in a 50% increase in user engagement. Secured user data by implementing a robust authentication and role-based access system using JSON storage, supporting over 500 registered users.
+            </p>
+          </div>
+          <div class="pt-8 mt-auto">
+            <a href="https://github.com/DragSensei/" target="_blank" rel="noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white/5 hover:bg-blue-600/20 hover:border-blue-500/50 border border-white/10 transition-all text-sm font-medium text-white group-hover:border-white/30">
+              <i data-lucide="github" class="w-4 h-4"></i>
+              View Source Code
+              <i data-lucide="external-link" class="w-3 h-3 ml-1 opacity-50"></i>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION SECTION -->
+    <section id="education" class="space-y-8 reveal-on-scroll scroll-mt-24">
+      <div class="flex items-center gap-3">
+        <div class="p-2 bg-emerald-500/20 rounded-xl border border-emerald-500/30">
+          <i data-lucide="graduation-cap" class="w-6 h-6 text-emerald-400"></i>
+        </div>
+        <h3 class="text-3xl font-bold">Education</h3>
+      </div>
+
+      <div class="bg-white/5 border border-white/10 backdrop-blur-2xl rounded-3xl p-8 shadow-[0_8px_32px_0_rgba(0,0,0,0.2)] hover:bg-white/10 transition-colors duration-300">
+        <div class="flex flex-col md:flex-row justify-between md:items-center gap-4">
+          <div>
+            <h4 class="text-2xl font-bold text-white">Ain Shams University</h4>
+            <p class="text-lg text-blue-300 mt-1">Bachelor's in Computer Science</p>
+          </div>
+          <div class="text-left md:text-right">
+            <span class="inline-block px-4 py-2 rounded-xl bg-white/10 border border-white/10 backdrop-blur-md text-white font-medium">
+              2023 – 2027
+            </span>
+            <p class="text-slate-400 mt-2 font-medium">Current GPA: <span class="text-white">3.38</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER SECTION -->
+    <footer class="mt-24 pt-8 pb-12 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-slate-400 text-sm reveal-on-scroll">
+      <p>© Yousef Tamer. Built with Liquid Glass UI.</p>
+      <div class="flex items-center gap-6">
+        <a href="https://github.com/DragSensei/" target="_blank" class="hover:text-white transition-colors group">
+          <span class="sr-only">GitHub</span>
+          <i data-lucide="github" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+        </a>
+        <button onclick="handleEmailClick(event)" class="hover:text-white transition-colors group">
+          <span class="sr-only">Email</span>
+          <i data-lucide="mail" class="w-5 h-5 group-hover:scale-110 transition-transform"></i>
+        </button>
+        <a href="#top" class="hover:text-white transition-colors flex items-center gap-1 group">
+          <span>Top</span>
+          <i data-lucide="arrow-up" class="w-4 h-4 group-hover:-translate-y-1 transition-transform"></i>
+        </a>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Javascript Logic for Features -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // 1. Scroll Reveal Logic (Intersection Observer)
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.15 // Triggers when 15% of the element is visible
+    };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          // Optional: stop observing once revealed so it doesn't animate out and in repeatedly
+          // observer.unobserve(entry.target); 
+        }
+      });
+    }, observerOptions);
+
+    // Grab all elements with the reveal class and observe them
+    document.querySelectorAll('.reveal-on-scroll').forEach((elem) => {
+      observer.observe(elem);
+    });
+
+    // 2. Smooth Scrolling Logic for Navigation Links (Robust Fallback)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('href');
+        if (targetId === '#') return; // Ignore empty hashes
+        
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+          // Calculate exact scroll position, accounting for the sticky nav height
+          const navHeight = 96; // Adjust this value if you want more/less space above the section
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.scrollY - navHeight;
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // 3. Enhanced "Email Me" Copy-to-Clipboard & Mailto Fallback Logic
+    function handleEmailClick(e) {
+      e.preventDefault();
+      const email = "youseftmoharam2511@gmail.com";
+      const subject = "Opportunity from Portfolio";
+      const mailtoLink = `mailto:${email}?subject=${encodeURIComponent(subject)}`;
+      
+      // Update Button UI to show "Copied"
+      const button = e.currentTarget;
+      const textSpan = button.querySelector('.email-text');
+      const icon = button.querySelector('.email-icon');
+      
+      // We use a try/catch to ensure the copy works on older browsers or iframes
+      const textArea = document.createElement("textarea");
+      textArea.value = email;
+      document.body.appendChild(textArea);
+      textArea.select();
+      
+      try {
+        document.execCommand('copy');
+        if(textSpan) textSpan.innerText = "Copied to Clipboard!";
+        if(icon) {
+            icon.setAttribute('data-lucide', 'check');
+            lucide.createIcons();
+            icon.classList.add('text-green-400');
+        }
+        
+        // Reset UI after 2.5 seconds
+        setTimeout(() => { 
+          if(textSpan) textSpan.innerText = "Email Me"; 
+          if(icon) {
+              icon.setAttribute('data-lucide', 'mail');
+              lucide.createIcons();
+              icon.classList.remove('text-green-400');
+          }
+        }, 2500);
+
+      } catch (err) {
+        console.error('Failed to copy', err);
+      }
+      
+      document.body.removeChild(textArea);
+
+      // Give the user a tiny delay to see the "Copied" message before the mail app pops open
+      setTimeout(() => {
+        window.location.href = mailtoLink;
+      }, 800);
+    }
+  </script>
+</body>
+</html>
